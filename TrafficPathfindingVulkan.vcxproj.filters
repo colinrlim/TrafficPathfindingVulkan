@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{a24716ac-e919-45e7-b8a6-960e6e6c0717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="systems">
+      <UniqueIdentifier>{0fa34032-84e8-4271-8fc2-c4ae6ccd1a17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ecs">
+      <UniqueIdentifier>{7ee1760b-4b4f-4d4b-94d6-1d5467ac52bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{fbd295de-2bb3-4961-8a1e-35bb733a24c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vulkan">
+      <UniqueIdentifier>{907edac0-4a8b-41f3-aa12-4987c995f081}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pathfinding">
+      <UniqueIdentifier>{0b613f0c-7728-421b-ae95-75ec49795a9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3d">
+      <UniqueIdentifier>{37ebcf12-3df0-4468-8273-c95a143bc62f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lib\tinyxml2.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\app.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\ActivePathRenderSystem.cpp">
+      <Filter>systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\PathRenderSystem.cpp">
+      <Filter>systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\SpatialSystemManager.cpp">
+      <Filter>systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Components.cpp">
+      <Filter>ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Buffer.cpp">
+      <Filter>vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Camera.cpp">
+      <Filter>vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Descriptors.cpp">
+      <Filter>vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Device.cpp">
+      <Filter>vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pipeline.cpp">
+      <Filter>vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Renderer.cpp">
+      <Filter>vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SwapChain.cpp">
+      <Filter>vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Texture.cpp">
+      <Filter>vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Window.cpp">
+      <Filter>vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MapGraph.cpp">
+      <Filter>pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pathfinding.cpp">
+      <Filter>pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Model.cpp">
+      <Filter>3d</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KeyboardMovementController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\OptimalPathRenderSystem.cpp">
+      <Filter>systems</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lib\tinyxml2.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\app.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\ActivePathRenderSystem.h">
+      <Filter>systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\PathRenderSystem.h">
+      <Filter>systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\SpatialSystemManager.h">
+      <Filter>systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\System.h">
+      <Filter>systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ComponentArray.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ComponentManager.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Components.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EntityComponentSystem.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EntityManager.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SystemManager.h">
+      <Filter>ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Buffer.h">
+      <Filter>vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Camera.h">
+      <Filter>vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Descriptors.h">
+      <Filter>vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Device.h">
+      <Filter>vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FrameInfo.h">
+      <Filter>vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pipeline.h">
+      <Filter>vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Renderer.h">
+      <Filter>vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SwapChain.h">
+      <Filter>vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Texture.h">
+      <Filter>vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utils.h">
+      <Filter>vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Window.h">
+      <Filter>vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pathfinding.h">
+      <Filter>pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MapGraph.h">
+      <Filter>pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Model.h">
+      <Filter>3d</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KeyboardMovementController.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\systems\OptimalPathRenderSystem.h">
+      <Filter>systems</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\active_path.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\path.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\path.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\optimal_path.vert">
+      <Filter>shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>
