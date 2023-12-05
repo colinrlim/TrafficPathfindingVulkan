@@ -136,6 +136,7 @@ std::vector<VkVertexInputAttributeDescription> Model::Vertex::getAttributeDescri
 	return attributeDescriptions;
 }
 
+// convert graph edges into triangles for rasterization
 void Model::Data::loadEdges(const std::vector<Edge*>& edges, glm::vec3 color, float width) {
 	vertices.reserve(edges.size() * 4);
 	indices.reserve(edges.size() * 6);
@@ -150,6 +151,7 @@ void Model::Data::loadEdges(const std::vector<Edge*>& edges, glm::vec3 color, fl
 
 		glm::vec2 perp(-dir.y, dir.x);
 
+		// vertices
 		glm::vec2 v0 = glm::vec2(x0, y0) + perp * width;
 		glm::vec2 v1 = glm::vec2(x0, y0) - perp * width;
 		glm::vec2 v2 = glm::vec2(x1, y1) + perp * width;
@@ -161,10 +163,12 @@ void Model::Data::loadEdges(const std::vector<Edge*>& edges, glm::vec3 color, fl
 		vertices.push_back({ glm::vec3(v2, 0.f), color });
 		vertices.push_back({ glm::vec3(v3, 0.f), color });
 
+		// triangle 1
 		indices.push_back(index);
 		indices.push_back(index + 1);
 		indices.push_back(index + 2);
-
+		
+		// triangle 2
 		indices.push_back(index + 2);
 		indices.push_back(index + 1);
 		indices.push_back(index + 3);

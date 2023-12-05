@@ -30,6 +30,6 @@ void main() {
 	gl_Position = ubo.projection * ubo.view * positionWorld;
 	fragNormalWorld = normalize(mat3(push.normalMatrix) * normal);
 	fragPosWorld = positionWorld.xyz;
-	fragColor = vec4(color, clamp((ubo.timeSinceAnimationStart / 1000.0 - gl_VertexIndex / 6.0 / 100000.0) * 8.0, 0.0, 1.0));
+	fragColor = vec4(color, clamp((ubo.timeSinceAnimationStart / 1000.0 - gl_VertexIndex / 6.0 / 10000.0) * 15.0, 0.0, 1.0));
 	fragUV = uv;
 }

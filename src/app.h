@@ -22,9 +22,7 @@ public:
 
 	void run();
 private:
-	void loadGameObjects();
-
-	Window window{ WIDTH, HEIGHT, "Hello Vulkan!" };
+	Window window{ WIDTH, HEIGHT, "Traffic Pathfinding" };
 	Device device{ window };
 	Renderer renderer{ window, device };
 

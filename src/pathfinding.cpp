@@ -10,15 +10,18 @@ PathfindingSolution pathfinding::dijkstra(MapGraph& graph, Node* from, Node* to)
     const auto beginTimestamp = std::chrono::duration_cast<std::chrono::milliseconds>(
         std::chrono::system_clock::now().time_since_epoch()).count();
 
+    // data structures
     std::vector<Edge*> predecessor(graph.nodes.size(), nullptr);
     std::vector<double> distance(graph.nodes.size(), DBL_MAX);
     distance[from->id] = 0.0;
 
+    // initialize
     std::set<std::pair<double, Node*>> todo;
     for (auto& node : graph.nodes) {
         todo.insert({ distance[node->id], node });
     }
 
+    // record all checked edges
     std::vector<Edge*> checked{};
     std::unordered_set<Edge*> checkedSet{};
     checked.reserve(graph.edges.size());
@@ -32,6 +35,7 @@ PathfindingSolution pathfinding::dijkstra(MapGraph& graph, Node* from, Node* to)
             Node* toNode = edge->to;
             double newDist = distance[v->id] + edge->weight;
 
+            // edge relaxation
             if (newDist < distance[toNode->id]) {
                 todo.erase({ distance[toNode->id], toNode });
                 distance[toNode->id] = newDist;
@@ -39,6 +43,7 @@ PathfindingSolution pathfinding::dijkstra(MapGraph& graph, Node* from, Node* to)
                 todo.insert({ newDist, toNode });
             }
 
+            // record all checked edges
             if (checkedSet.find(edge) == checkedSet.end()) {
                 checked.push_back(edge);
                 checkedSet.insert(edge);
@@ -51,6 +56,7 @@ PathfindingSolution pathfinding::dijkstra(MapGraph& graph, Node* from, Node* to)
 
     if (predecessor[to->id] == nullptr) return { checked, {}, beginTimestamp, endTimestamp };
 
+    // construct optimal path
     std::vector<Edge*> path;
     for (Node* current = to; current != from; current = predecessor[current->id]->from) {
         path.push_back(predecessor[current->id]);
@@ -65,15 +71,19 @@ PathfindingSolution pathfinding::bellmanford(MapGraph& graph, Node* from, Node* 
     const auto beginTimestamp = std::chrono::duration_cast<std::chrono::milliseconds>(
         std::chrono::system_clock::now().time_since_epoch()).count();
 
+    // data structures
     std::vector<Edge*> predecessor(graph.nodes.size(), nullptr);
     std::vector<double> distance(graph.nodes.size(), DBL_MAX);
     distance[from->id] = 0.0;
 
+    // record all checked edges
     std::vector<Edge*> checked{};
     std::unordered_set<Edge*> checkedSet{};
     checked.reserve(graph.edges.size());
     checkedSet.reserve(graph.edges.size());
 
+
+    // relaxation across all edges
     bool updated;
     for (size_t i = 0; i < graph.nodes.size() - 1; ++i) {
         updated = false;
@@ -96,6 +106,7 @@ PathfindingSolution pathfinding::bellmanford(MapGraph& graph, Node* from, Node* 
         if (!updated) break;
     }
 
+    // check for infinite loop
     for (auto& edge : graph.edges) {
         Node* u = edge->from;
         Node* v = edge->to;
@@ -112,6 +123,7 @@ PathfindingSolution pathfinding::bellmanford(MapGraph& graph, Node* from, Node* 
 
     if (predecessor[to->id] == nullptr) return { checked, {}, beginTimestamp, endTimestamp };
 
+    // construct optimal path
     std::vector<Edge*> path;
     for (Node* current = to; current != from && predecessor[current->id] != nullptr; current = predecessor[current->id]->from) {
         path.push_back(predecessor[current->id]);
